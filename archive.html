@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Archive — Ven. Napan Thawornbanjob</title>
+<meta name="description" content="Comprehensive digital archive of Ven. Napan Thawornbanjob's work in Buddhism for SDGs, interfaith dialogue, and peacebuilding — 10 years of media, publications, and engagements.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8C96A;--saffron:#E07B2A;--deep:#1A1A2E;--surface:#F8F5EF;--surface-alt:#F0EBE0;--white:#fff;--ink:#2C2416;--ink-soft:#6B5F4A;--teal:#2A6B6B;--border:rgba(201,168,76,0.25)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--ink)}
+header{background:var(--deep);padding:3rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% -10%,rgba(201,168,76,0.15) 0%,transparent 70%);pointer-events:none}
+header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:300;color:var(--gold-light);position:relative}
+header p{font-size:0.78rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;margin-top:0.5rem;position:relative}
+header .back{position:absolute;left:2rem;top:50%;transform:translateY(-50%);font-size:0.75rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em}
+header .back:hover{color:var(--gold-light)}
+main{max-width:960px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.section-label{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.2rem;display:flex;align-items:center;gap:0.75rem}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.section-block{margin-bottom:3rem}
+.filters{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem}
+.filter-btn{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.85rem;border-radius:100px;border:1px solid var(--border);background:var(--white);color:var(--ink-soft);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.filter-btn.active,.filter-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.entry{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.2rem 1.4rem;margin-bottom:0.8rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.2s;position:relative;overflow:hidden}
+.entry::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--gold);opacity:0;transition:opacity 0.2s}
+.entry:hover{border-color:rgba(201,168,76,0.5)}
+.entry:hover::before{opacity:1}
+.entry .year{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold);min-width:42px;flex-shrink:0;text-align:right;padding-top:2px}
+.entry .body h3{font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;line-height:1.4}
+.entry .body p{font-size:0.76rem;color:var(--ink-soft);line-height:1.6;font-weight:300}
+.entry .tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem}
+.tag{font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:100px;font-weight:500;font-family:'DM Sans',sans-serif}
+.tag-media{background:rgba(224,123,42,0.1);color:var(--saffron)}
+.tag-intl{background:rgba(42,107,107,0.1);color:var(--teal)}
+.tag-org{background:rgba(201,168,76,0.12);color:#8B7530}
+.tag-dhamma{background:rgba(107,95,74,0.1);color:var(--ink-soft)}
+.tag-award{background:rgba(184,92,120,0.1);color:#B85C78}
+.tag-academic{background:rgba(45,95,139,0.1);color:#2D5F8B}
+.entry a{color:var(--teal);font-size:0.72rem;text-decoration:none;font-weight:500}
+.entry a:hover{text-decoration:underline}
+.stat-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:3rem}
+.stat{background:var(--white);padding:1rem;text-align:center}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--gold)}
+.stat .label{font-size:0.68rem;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase}
+.profiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-bottom:3rem}
+.profile-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.2rem 1.4rem;display:flex;gap:0.8rem;align-items:center;text-decoration:none;color:var(--ink);transition:border-color 0.2s,transform 0.2s}
+.profile-card:hover{border-color:rgba(201,168,76,0.5);transform:translateY(-2px)}
+.profile-card .icon{font-size:1.5rem;flex-shrink:0}
+.profile-card h3{font-size:0.85rem;font-weight:500}
+.profile-card p{font-size:0.72rem;color:var(--ink-soft);font-weight:300}
+footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-size:0.72rem;color:var(--ink-soft)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.entry{animation:fadeUp 0.4s ease both}
+@media(max-width:560px){.entry{flex-direction:column;gap:0.3rem}.entry .year{text-align:left}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">← Home</a>
+  <h1>Digital Archive</h1>
+  <p>Ven. Napan Thawornbanjob · พระมหานภันต์ สนฺติภทฺโท · 10 Years of Work</p>
+</header>
+
+<main>
+
+<!-- STATS -->
+<div class="stat-strip">
+  <div class="stat"><div class="num">60+</div><div class="label">Sources found</div></div>
+  <div class="stat"><div class="num">10+</div><div class="label">Countries</div></div>
+  <div class="stat"><div class="num">15+</div><div class="label">Media outlets</div></div>
+  <div class="stat"><div class="num">8+</div><div class="label">Intl. orgs</div></div>
+  <div class="stat"><div class="num">2015</div><div class="label">Earliest record</div></div>
+</div>
+
+<!-- ONLINE PROFILES -->
+<div class="section-block">
+  <p class="section-label">Online Profiles &amp; Social Media</p>
+  <div class="profiles">
+    <a class="profile-card" href="https://www.facebook.com/tiknapan/" target="_blank"><div class="icon">📘</div><div><h3>Facebook — พระมหานภันต์ สกพ.</h3><p>Public figure page · Buddhism for SDGs · ข่าวสาร กิจกรรม</p></div></a>
+    <a class="profile-card" href="https://www.facebook.com/pmnapan/" target="_blank"><div class="icon">👤</div><div><h3>Facebook — Personal</h3><p>Napan Santibhaddo Thawornbanjob</p></div></a>
+    <a class="profile-card" href="https://www.facebook.com/IBHAP/" target="_blank"><div class="icon">☸️</div><div><h3>Facebook — IBHAP Foundation</h3><p>มูลนิธิ สกพ. - IBHAP Foundation</p></div></a>
+    <a class="profile-card" href="https://www.linkedin.com/in/pmnapan/" target="_blank"><div class="icon">💼</div><div><h3>LinkedIn</h3><p>Ven.Napan Santibhaddo Thawornbanjob · 500+ connections</p></div></a>
+    <a class="profile-card" href="https://www.kaiciid.org/who-we-are/fellows/ven-napan-thawornbanjob" target="_blank"><div class="icon">🕊️</div><div><h3>KAICIID Fellow Profile</h3><p>Official fellow biography · 2018 cohort</p></div></a>
+    <a class="profile-card" href="https://www.gotoknow.org/user/pmnapan/profile" target="_blank"><div class="icon">📝</div><div><h3>GotoKnow</h3><p>พระมหานภันต์ เพื่อชีวิตดีงาม · บทความภาษาไทย</p></div></a>
+    <a class="profile-card" href="https://ibhap.org/about-us-en/" target="_blank"><div class="icon">🌐</div><div><h3>IBHAP Foundation Website</h3><p>ibhap.org · Official foundation site</p></div></a>
+    <a class="profile-card" href="https://pmnapan.github.io/ibhap-hub/" target="_blank"><div class="icon">📊</div><div><h3>IBHAP Hub — Dashboards</h3><p>Annual reports · 5Ps+Phra analysis · Strategic data</p></div></a>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="section-block">
+  <p class="section-label">Timeline &amp; Archive</p>
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterEntries('all')">All</button>
+    <button class="filter-btn" onclick="filterEntries('intl')">International</button>
+    <button class="filter-btn" onclick="filterEntries('media')">Thai Media</button>
+    <button class="filter-btn" onclick="filterEntries('org')">Organisations</button>
+    <button class="filter-btn" onclick="filterEntries('dhamma')">Dhamma</button>
+    <button class="filter-btn" onclick="filterEntries('academic')">Academic</button>
+    <button class="filter-btn" onclick="filterEntries('award')">Awards</button>
+  </div>
+
+  <div id="entries">
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2025</div>
+      <div class="body">
+        <h3>WCC Beijing 30+ Consultation — Interfaith Panel on Gender Justice</h3>
+        <p>Spoke on Buddhist peacebuilding and gender justice alongside speakers from the Muslim Council of Elders, Evangelical Lutheran Church, and Jesuit theologians. Quoted: "Let the bomb destroy only the body of a Buddhist monk, not the heart of Buddhism."</p>
+        <div class="tags"><span class="tag tag-intl">WCC</span><span class="tag tag-intl">Gender Justice</span></div>
+        <a href="https://www.oikoumene.org/news/interfaith-panel-affirms-gender-justice-as-social-responsibility-and-spiritual-calling" target="_blank">oikoumene.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2025</div>
+      <div class="body">
+        <h3>ICCS 2025 — Plenary Speaker, Singapore</h3>
+        <p>International Conference on Cohesive Societies. Plenary 3 on interreligious dialogue and social cohesion. One of the highest-profile interreligious events in Asia.</p>
+        <div class="tags"><span class="tag tag-intl">ICCS</span><span class="tag tag-intl">Singapore</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2025</div>
+      <div class="body">
+        <h3>PaRD Leadership Meeting — Jakarta (first in Asia)</h3>
+        <p>Led Thai delegation to the Partnership on Religion and Sustainable Development Leadership Meeting. First PaRD meeting held in Asia. Co-participated with Prof Dr Kanok and Thai MPs.</p>
+        <div class="tags"><span class="tag tag-intl">PaRD</span><span class="tag tag-intl">Indonesia</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl org">
+      <div class="year">2025</div>
+      <div class="body">
+        <h3>Secretary-General, Religions for Peace Thailand (IRC)</h3>
+        <p>Appointed Secretary-General of the Interreligious Council of Thailand under Religions for Peace, from March 2025.</p>
+        <div class="tags"><span class="tag tag-org">RfP</span><span class="tag tag-intl">Appointment</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2024</div>
+      <div class="body">
+        <h3>KAICIID Global Forum 2024 — Human Library Speaker</h3>
+        <p>Participated in the KAICIID Global Forum on Transformative Dialogue. Served as "Human Library" speaker sharing interfaith experiences. Guided site visits to Bangkok mosques, temples, and shrines for international Fellows.</p>
+        <div class="tags"><span class="tag tag-intl">KAICIID</span><span class="tag tag-intl">Bangkok</span></div>
+        <a href="https://www.kaiciid.org/stories/features/illuminating-global-dialogue-kaiciid-fellows-2024-global-forum" target="_blank">kaiciid.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl media">
+      <div class="year">2024</div>
+      <div class="body">
+        <h3>Samakee Institute Conference — Interfaith Dialogue, Chulalongkorn University</h3>
+        <p>Featured speaker alongside Rev. Thomas Michel SJ and Imam Thanarat. Covered by eTurboNews as key voice on "Harmony, Order and Balance" — Thailand's path to becoming an interfaith hub.</p>
+        <div class="tags"><span class="tag tag-intl">Conference</span><span class="tag tag-media">eTurboNews</span></div>
+        <a href="https://eturbonews.com/to-become-a-multi-sectoral-hub-thailand-first-needs-to-build-its-hob/" target="_blank">eturbonews.com →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2023</div>
+      <div class="body">
+        <h3>KAICIID Feature Story — "Two Fellows Find Friendship, Seek Peace"</h3>
+        <p>In-depth profile of the Buddhist-Muslim peacebuilding partnership between Ven. Napan and Kriya Langputeh in Southern Thailand. "We are different from the outside, but have the same goal in mind — to build peace."</p>
+        <div class="tags"><span class="tag tag-intl">KAICIID</span><span class="tag tag-intl">Peacebuilding</span></div>
+        <a href="https://www.kaiciid.org/stories/features/southern-thailand-two-kaiciid-fellows-find-friendship-seek-peace" target="_blank">kaiciid.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="media dhamma">
+      <div class="year">2022</div>
+      <div class="body">
+        <h3>คมชัดลึก — "พระมหานภันต์ โพสต์เตือนสติ" + Live ให้พระมาสอน</h3>
+        <p>Nationwide coverage of dhamma live-stream with พระมหาไพรวัลย์. The "4 พส." phenomenon brought Buddhism to millions via social media.</p>
+        <div class="tags"><span class="tag tag-media">คมชัดลึก</span><span class="tag tag-media">LINE TODAY</span><span class="tag tag-dhamma">Viral Dhamma</span></div>
+        <a href="https://today.line.me/th/v2/article/OpOyKrW" target="_blank">LINE TODAY →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="media dhamma">
+      <div class="year">2021</div>
+      <div class="body">
+        <h3>เดลินิวส์ — "ทางเดินอาจเปลี่ยนไป แต่จุดหมายจุดเดียวกัน"</h3>
+        <p>Heartfelt post to พระมหาไพรวัลย์ about friendship and shared mission. Covered by Dailynews, Komchadluek, and social media nationwide.</p>
+        <div class="tags"><span class="tag tag-media">เดลินิวส์</span><span class="tag tag-dhamma">4 พส.</span></div>
+        <a href="https://www.dailynews.co.th/news/523416/" target="_blank">dailynews.co.th →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2021</div>
+      <div class="body">
+        <h3>Peacemakers Network — Advancing Gender Equality & UNSCR 1325</h3>
+        <p>"Because of my changed perspective — I will do whatever I can do to change or inspire women… We need to amplify the voices of women peacebuilders."</p>
+        <div class="tags"><span class="tag tag-intl">Peacemakers Network</span><span class="tag tag-intl">Gender</span></div>
+        <a href="https://www.peacemakersnetwork.org/engaging-male-religious-and-traditional-leaders-to-advance-the-1325-and-2250-agendas/" target="_blank">peacemakersnetwork.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="org">
+      <div class="year">2020</div>
+      <div class="body">
+        <h3>Founded IBHAP Foundation (มูลนิธิ สกพ.)</h3>
+        <p>Institute of Buddhist Management for Happiness and Peace Foundation. Registered 21 September 2563. Six planned centres covering youth, health, human rights, dialogue, monks incubator, and communications.</p>
+        <div class="tags"><span class="tag tag-org">IBHAP</span><span class="tag tag-org">Foundation</span></div>
+        <a href="https://ibhap.org/about-us-en/" target="_blank">ibhap.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="dhamma media">
+      <div class="year">2020</div>
+      <div class="body">
+        <h3>รายการ "หลวงพี่ช่วยด้วย" — 50+ Episodes</h3>
+        <p>Dhamma talk show on social media featuring celebrity guests. Episodes with Thai and English subtitles. Over 50 episodes produced through IBHAP Foundation.</p>
+        <div class="tags"><span class="tag tag-dhamma">TV Show</span><span class="tag tag-media">Social Media</span></div>
+        <a href="https://ibhap.org/monks-help-me/" target="_blank">ibhap.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2018</div>
+      <div class="body">
+        <h3>KAICIID Fellow (2018 Cohort)</h3>
+        <p>Selected as KAICIID Fellow for interfaith dialogue training. Since 2017, worked with Kriya Langputeh on Buddhist-Muslim reconciliation in Southern Thailand.</p>
+        <div class="tags"><span class="tag tag-intl">KAICIID</span><span class="tag tag-intl">Fellow</span></div>
+        <a href="https://www.kaiciid.org/who-we-are/fellows/ven-napan-thawornbanjob" target="_blank">kaiciid.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="org">
+      <div class="year">2017</div>
+      <div class="body">
+        <h3>Appointed Assistant Abbot, Wat Saket (ผู้ช่วยเจ้าอาวาสพระอารามหลวง)</h3>
+        <p>Approved by the Sangha Supreme Council of Thailand. Wat Saket Ratchaworamahawihan (The Golden Mount), Bangkok.</p>
+        <div class="tags"><span class="tag tag-org">Wat Saket</span><span class="tag tag-org">Sangha</span></div>
+        <a href="https://mahathera.onab.go.th/index.php?id=5672&url=mati" target="_blank">mahathera.onab.go.th →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="academic">
+      <div class="year">2015</div>
+      <div class="body">
+        <h3>King Prajadhipok's Institute — Lecturer on Ethics &amp; Leadership</h3>
+        <p>Designed and led training programmes on moral leadership, ethics, and Buddhist social capital for government and private sector. "New Generation Leadership in Religious Perspective."</p>
+        <div class="tags"><span class="tag tag-academic">KPI</span><span class="tag tag-academic">Lecturer</span></div>
+        <a href="https://ibhap.org/new-generation-leadership-in-religious-perspective-en/" target="_blank">ibhap.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2014</div>
+      <div class="body">
+        <h3>Network for Religious and Traditional Peacemakers — First Engagement</h3>
+        <p>Introduced to the Network in 2014 in Vienna. Led to founding of IBHAP Foundation and ongoing collaboration on gender equality and peacebuilding.</p>
+        <div class="tags"><span class="tag tag-intl">Peacemakers</span><span class="tag tag-intl">Vienna</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="award media">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3>TRUE Little Monks — Cannes Corporate &amp; Media Awards 2013</h3>
+        <p>Anchorman for the reality TV show "สามเณรปลูกปัญญาธรรม" (TRUE Little Monks). Won international award at Cannes. Brought Buddhist education to mainstream Thai television.</p>
+        <div class="tags"><span class="tag tag-award">Cannes Award</span><span class="tag tag-media">TRUE TV</span><span class="tag tag-dhamma">สามเณร</span></div>
+        <a href="https://www.truelittlemonk.com/" target="_blank">truelittlemonk.com →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3>Uganda — United Religions Initiative, Great Lakes Region</h3>
+        <p>Participated in conflict resolution discussions. Founding member of Buddhist Peace Network.</p>
+        <div class="tags"><span class="tag tag-intl">URI</span><span class="tag tag-intl">Uganda</span></div>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="org dhamma">
+      <div class="year">2001</div>
+      <div class="body">
+        <h3>Founded "For Beautiful Life Group" (เพื่อชีวิตดีงาม)</h3>
+        <p>Chair from 2001 to 2015. Designed training programmes for Buddhist community leaders in Southern Thailand's conflict zones. Precursor to IBHAP Foundation.</p>
+        <div class="tags"><span class="tag tag-org">FBLG</span><span class="tag tag-dhamma">Southern Thailand</span></div>
+        <a href="https://www.gotoknow.org/user/pmnapan/profile" target="_blank">gotoknow.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="media">
+      <div class="year">2019</div>
+      <div class="body">
+        <h3>Tim Cook (Apple CEO) meets Phra Ajarn at Wat Saket</h3>
+        <p>Tim Cook visited Wat Saket during a trip to Thailand. Photo with Phra Ajarn went viral. "When spirituality meets technology… we hope it brings the best of both worlds."</p>
+        <div class="tags"><span class="tag tag-media">Viral</span><span class="tag tag-media">manasikul.com</span></div>
+        <a href="https://www.manasikul.com/%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%88%E0%B8%B4%E0%B8%95%E0%B8%A7%E0%B8%B4%E0%B8%8D%E0%B8%8D%E0%B8%B2%E0%B8%93%E0%B8%9E%E0%B8%9A%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%97/" target="_blank">manasikul.com →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="org">
+      <div class="year">2022</div>
+      <div class="body">
+        <h3>คมชัดลึก — ประวัติพระมหานภันต์ (Full Biography)</h3>
+        <p>เกิด 20 ส.ค. 2519 กทม. · บวชเณร 2531 วัดสระเกศ · บวชพระ 2543 · ป.ธ.๙ · ป.ตรี ศึกษาศาสตร์ (สุโขทัยธรรมาธิราช) · ป.โท ภาษาอังกฤษเพื่ออาชีพ (ธรรมศาสตร์) · สถาบันพระปกเกล้า (สสสส. + บรม.)</p>
+        <div class="tags"><span class="tag tag-media">คมชัดลึก</span><span class="tag tag-academic">Biography</span></div>
+        <a href="https://www.komchadluek.net/hot-social/501113" target="_blank">komchadluek.net →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="org">
+      <div class="year">2024</div>
+      <div class="body">
+        <h3>ผ้าป่ามหากุศลเพื่อเด็กพิการ ร่วมกับมูลนิธิเพื่อเด็กพิการ (มพก.)</h3>
+        <p>IBHAP Foundation collaborated with the Foundation for Children with Disabilities. Fundraising and community engagement programme.</p>
+        <div class="tags"><span class="tag tag-org">มพก.</span><span class="tag tag-dhamma">Charity</span></div>
+        <a href="https://fcdthailand.org/news-type/%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%8D%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B9%80%E0%B8%88%E0%B9%89%E0%B8%B2%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%9C/" target="_blank">fcdthailand.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="media">
+      <div class="year">2024</div>
+      <div class="body">
+        <h3>ผู้จัดการออนไลน์ (MGR Online) — Tag: พระมหานภันต์ สนฺติภทฺโท</h3>
+        <p>Multiple news articles tagged under MGR Online's dedicated tag for Phra Ajarn.</p>
+        <div class="tags"><span class="tag tag-media">ผู้จัดการ</span></div>
+        <a href="https://mgronline.com/tags/%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%A0%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B9%8C%20%E0%B8%AA%E0%B8%99%E0%B8%BA%E0%B8%95%E0%B8%B4%E0%B8%A0%E0%B8%97%E0%B8%BA%E0%B9%82%E0%B8%97" target="_blank">mgronline.com →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2024</div>
+      <div class="body">
+        <h3>KAICIID Global Dialogue Forum — Official Speaker Page</h3>
+        <p>Listed as official speaker. "Assistant Abbot, The Golden Mount Temple; Director, IBHAP."</p>
+        <div class="tags"><span class="tag tag-intl">KAICIID</span><span class="tag tag-intl">Speaker</span></div>
+        <a href="https://www.kaiciidglobalforum.org/speaker/napan-thawornbanjob" target="_blank">kaiciidglobalforum.org →</a>
+      </div>
+    </div>
+
+    <div class="entry" data-cat="academic intl">
+      <div class="year">2024</div>
+      <div class="body">
+        <h3>Cited in Academic Paper — Track 1.5 Diplomacy (Taylor &amp; Francis)</h3>
+        <p>KAICIID and ICCS work referenced in peer-reviewed paper on interreligious dialogue in international relations by Prof. Paul Hedges, RSIS, NTU Singapore.</p>
+        <div class="tags"><span class="tag tag-academic">Academic</span><span class="tag tag-intl">RSIS</span></div>
+        <a href="https://www.tandfonline.com/doi/full/10.1080/15570274.2023.2200276" target="_blank">tandfonline.com →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<footer>
+  สันติสุขในใจใคร เริ่มต้นได้ที่ใจเรา · Peace in One's Heart Starts in One's Hands<br>
+  © 2026 Ven. Napan Thawornbanjob · <a href="index.html" style="color:inherit;">← Back to Home</a>
+</footer>
+
+<script>
+function filterEntries(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.entry').forEach(e => {
+    if (cat === 'all') { e.style.display = ''; return; }
+    e.style.display = e.dataset.cat.includes(cat) ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
