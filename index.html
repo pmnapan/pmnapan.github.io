@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ven. Napan Thawornbanjob — Buddhism for SDGs</title>
+<meta name="description" content="Venerable Napan Thawornbanjob (พระมหานภันต์ สนฺติภทฺโท) — Assistant Abbot of Wat Saket, Founding Chair of IBHAP Foundation, Secretary-General of Religions for Peace Thailand.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C96A;
+  --gold-soft: rgba(201,168,76,0.12);
+  --saffron: #E07B2A;
+  --deep: #1A1A2E;
+  --deep2: #12121F;
+  --surface: #F8F5EF;
+  --surface-alt: #F0EBE0;
+  --white: #fff;
+  --ink: #2C2416;
+  --ink-soft: #6B5F4A;
+  --teal: #2A6B6B;
+  --teal-light: #3D8B8B;
+  --border: rgba(201,168,76,0.25);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--surface); color: var(--ink); }
+
+/* ── HEADER ── */
+header {
+  position: relative;
+  background: var(--deep);
+  padding: 4rem 2rem 3.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% -10%, rgba(201,168,76,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 80% 120%, rgba(224,123,42,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.dharma-wheel {
+  width: 44px; height: 44px;
+  margin: 0 auto 1.2rem;
+  opacity: 0.8;
+  animation: spin 20s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+header h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 300;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  position: relative;
+}
+header h1 .th-name {
+  display: block;
+  font-size: 0.52em;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.06em;
+  margin-top: 0.3em;
+}
+.header-roles {
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  position: relative;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gold-rule {
+  width: 48px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 1.5rem auto 0;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+  position: relative;
+}
+nav a {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--gold-light); }
+
+/* ── MAIN ── */
+main { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+
+/* ── SECTION ── */
+.section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.section-label::after {
+  content: '';
+  flex: 1; height: 1px;
+  background: var(--border);
+}
+.section-block { margin-bottom: 3.5rem; }
+
+/* ── ABOUT ── */
+.about-strip {
+  background: var(--deep);
+  border-radius: 4px;
+  padding: 2.2rem 2.4rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.about-strip::after {
+  content: '☸';
+  position: absolute;
+  right: 2rem; top: 50%;
+  transform: translateY(-50%);
+  font-size: 5rem;
+  color: rgba(201,168,76,0.05);
+  pointer-events: none;
+}
+.about-strip p {
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.85;
+  font-weight: 300;
+  position: relative;
+}
+.about-strip strong { color: var(--gold-light); font-weight: 400; }
+
+/* ── ROLES GRID ── */
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+.role-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.4rem 1.5rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+.role-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--saffron));
+}
+.role-card .role-icon { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.role-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.role-card p {
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ── FRAMEWORK PILLS ── */
+.framework {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 3.5rem;
+}
+.pill {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  background: var(--white);
+}
+.pill.highlight { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+/* ── CARD GRID ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.5rem 1.6rem 1.3rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--saffron));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  border-color: rgba(201,168,76,0.55);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.1);
+  transform: translateY(-2px);
+}
+.card:hover::before { transform: scaleX(1); }
+.card-icon { font-size: 1.4rem; line-height: 1; margin-bottom: 0.15rem; }
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.card-desc {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-weight: 300;
+}
+.card-tag {
+  margin-top: auto;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  font-weight: 500;
+}
+.card.live {
+  background: linear-gradient(135deg, #FBF6EC 0%, #F5EDDA 100%);
+  border-color: rgba(201,168,76,0.4);
+}
+.card.live:hover {
+  border-color: var(--gold);
+  box-shadow: 0 6px 24px rgba(201,168,76,0.18);
+}
+.card.live .card-tag { color: var(--saffron); }
+
+/* ── INTERNATIONAL TIMELINE ── */
+.timeline { margin-bottom: 3.5rem; }
+.t-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+  align-items: flex-start;
+}
+.t-item:last-child { border: none; }
+.t-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gold);
+  min-width: 42px;
+  flex-shrink: 0;
+}
+.t-body h4 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+.t-body p {
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+/* ── CONTACT STRIP ── */
+.contact-strip {
+  background: var(--deep);
+  border-radius: 4px;
+  padding: 2rem 2.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+}
+.contact-strip p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  font-weight: 300;
+}
+.contact-strip strong { color: var(--gold-light); font-weight: 400; }
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border: 1px solid rgba(201,168,76,0.35);
+  padding: 0.55rem 1.1rem;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s;
+}
+.contact-link:hover { background: var(--gold); color: var(--deep); }
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.08em;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card, .role-card, .t-item { animation: fadeUp 0.5s ease both; }
+.card:nth-child(1), .role-card:nth-child(1), .t-item:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2), .role-card:nth-child(2), .t-item:nth-child(2) { animation-delay: 0.10s; }
+.card:nth-child(3), .role-card:nth-child(3), .t-item:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4), .role-card:nth-child(4), .t-item:nth-child(4) { animation-delay: 0.20s; }
+.card:nth-child(5), .t-item:nth-child(5) { animation-delay: 0.25s; }
+.card:nth-child(6), .t-item:nth-child(6) { animation-delay: 0.30s; }
+
+@media (max-width: 560px) {
+  .contact-strip { flex-direction: column; text-align: center; }
+  .roles-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="dharma-wheel" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="46" stroke="#C9A84C" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="8"  stroke="#C9A84C" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="28" stroke="#C9A84C" stroke-width="1" stroke-dasharray="3 3"/>
+    <line x1="50" y1="22" x2="50" y2="4"  stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="50" y1="78" x2="50" y2="96" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="22" y1="50" x2="4"  y2="50" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="78" y1="50" x2="96" y2="50" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="30" y1="30" x2="17" y2="17" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="70" y1="70" x2="83" y2="83" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="70" y1="30" x2="83" y2="17" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="30" y1="70" x2="17" y2="83" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <h1>
+    Ven. Napan Thawornbanjob
+    <span class="th-name">พระมหานภันต์ สนฺติภทฺโท (ถาวรบรรจบ)</span>
+  </h1>
+  <p class="header-roles">
+    Assistant Abbot, Wat Saket (The Golden Mount) · Founding Chair, IBHAP Foundation<br>
+    Secretary-General, Religions for Peace Thailand · PhD Candidate, SWU
+  </p>
+  <div class="gold-rule"></div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#roles">Roles</a>
+    <a href="#framework">Framework</a>
+    <a href="#dashboards">Dashboards</a>
+    <a href="#international">International</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ABOUT -->
+  <div id="about" class="about-strip">
+    <p>
+      <strong>Ven. Napan Thawornbanjob (Phra Ajarn)</strong> is a Buddhist monk dedicated to bridging
+      ancient wisdom and modern sustainability. As Assistant Abbot of Wat Saket (The Golden Mount Temple)
+      in Bangkok, Founding Chair of <strong>IBHAP Foundation</strong>, and Secretary-General of
+      <strong>Religions for Peace Thailand</strong>, he advances the
+      <strong>5Ps&nbsp;+&nbsp;Phra framework</strong> — mapping Buddhist principles to the UN Sustainable
+      Development Goals across People, Prosperity, Planet, Peace, Partnership, and the unique role of the
+      Sangha (<em>Phra</em>). He is currently completing a PhD in Social Management at Srinakharinwirot
+      University, with a dissertation on <strong>"Buddhist Social Marketing to Achieve SDGs."</strong>
+    </p>
+  </div>
+
+  <!-- ROLES -->
+  <div id="roles" class="section-block">
+    <p class="section-label">Roles &amp; Responsibilities</p>
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-icon">🏛️</div>
+        <h3>Wat Saket</h3>
+        <p>Assistant Abbot of Wat Saket Ratchaworamahawihan (The Golden Mount), Bangkok. Overseeing temple programmes, dhamma lectures, and community engagement.</p>
+      </div>
+      <div class="role-card">
+        <div class="role-icon">☸️</div>
+        <h3>IBHAP Foundation</h3>
+        <p>Founding Chair. Six centres: YEP Centre, Mental &amp; Planetary Health, Human Rights &amp; Social Inclusion, Dialogue Centre, Socially Engaged Monks Incubator, Communication Centre.</p>
+      </div>
+      <div class="role-card">
+        <div class="role-icon">🕊️</div>
+        <h3>Religions for Peace</h3>
+        <p>Secretary-General, Interreligious Council of Thailand (from March 2025). Coordinating interfaith dialogue and peacebuilding across religious communities in Thailand.</p>
+      </div>
+      <div class="role-card">
+        <div class="role-icon">🎓</div>
+        <h3>Academic</h3>
+        <p>PhD candidate in Social Management, Srinakharinwirot University. Dissertation: "Buddhist Social Marketing to Achieve SDGs: Concept, Theory and Application." APMA, Mahidol University.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRAMEWORK -->
+  <div id="framework" class="section-block">
+    <p class="section-label">The 5Ps + Phra Framework</p>
+    <div class="framework">
+      <span class="pill highlight">5Ps + Phra</span>
+      <span class="pill">👥 People</span>
+      <span class="pill">💰 Prosperity</span>
+      <span class="pill">🌍 Planet</span>
+      <span class="pill">☮️ Peace</span>
+      <span class="pill">🤝 Partnership</span>
+      <span class="pill highlight">🙏 Phra</span>
+      <span class="pill">Buddhism &amp; SDGs</span>
+      <span class="pill">Interreligious Dialogue</span>
+      <span class="pill">Social Marketing</span>
+    </div>
+  </div>
+
+  <!-- DASHBOARDS -->
+  <div id="dashboards" class="section-block">
+    <p class="section-label">Dashboards &amp; Reports</p>
+    <div class="card-grid">
+      <a class="card live" href="https://pmnapan.github.io/ibhap-hub/ibhap_2567_vs_2568_analysis.html">
+        <div class="card-icon">📊</div>
+        <div class="card-title">Comparative Analysis 2567 vs 2568</div>
+        <div class="card-desc">Strategic comparison across all dimensions: finance, activities, 5Ps+Phra, partners, international engagement — with 10 recommendations.</div>
+        <div class="card-tag">Strategic Analysis</div>
+      </a>
+      <a class="card live" href="https://pmnapan.github.io/ibhap-hub/ibhap_2567_5ps_phra_dashboard.html">
+        <div class="card-icon">📅</div>
+        <div class="card-title">Annual Dashboard 2567</div>
+        <div class="card-desc">254 activities · 10+ countries · 40+ partners · 5Ps+Phra mapping · Financial overview.</div>
+        <div class="card-tag">FY 2567 (2024)</div>
+      </a>
+      <a class="card live" href="https://pmnapan.github.io/ibhap-hub/ibhap_2568_5ps_phra_dashboard.html">
+        <div class="card-icon">📅</div>
+        <div class="card-title">Annual Dashboard 2568</div>
+        <div class="card-desc">88+ activities · MOU with 17 organisations · International project funding 971K THB · Audited financials.</div>
+        <div class="card-tag">FY 2568 (2025)</div>
+      </a>
+    </div>
+    <p style="font-size:0.75rem;color:var(--ink-soft);margin-top:0.5rem;">
+      More dashboards at <a href="https://pmnapan.github.io/ibhap-hub/" style="color:var(--teal);">IBHAP Hub →</a>
+    </p>
+  </div>
+
+  <!-- INTERNATIONAL -->
+  <div id="international" class="section-block">
+    <p class="section-label">International Engagement</p>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-year">2568</div>
+        <div class="t-body">
+          <h4>ICCS 2025 — Plenary Speaker</h4>
+          <p>International Conference on Cohesive Societies, Singapore. Plenary 3 on interreligious dialogue and social cohesion.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2568</div>
+        <div class="t-body">
+          <h4>PaRD Leadership Meeting — Jakarta</h4>
+          <p>Led Thai delegation to the first-ever Asian PaRD Leadership Meeting on Religion &amp; Sustainable Development, Jakarta.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2568</div>
+        <div class="t-body">
+          <h4>Youth-led Storytelling for Peace</h4>
+          <p>IBHAP's first international youth project. Funded by Finn Church Aid &amp; KAICIID. Multi-country ASEAN youth storytelling workshop.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2568</div>
+        <div class="t-body">
+          <h4>SALAAM Mindanao &amp; Beyond</h4>
+          <p>CERITA-KAICIID youth fellows presented at SALAAM Mindanao, Davao, Philippines — expanding the Southeast Asian peace network.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2567</div>
+        <div class="t-body">
+          <h4>COP16 Biodiversity — Cali, Colombia</h4>
+          <p>Presented the "เวียนเทียนด้วยต้นไม้" (Candlelight with Trees) model as a faith-based nature conservation case study.</p>
+        </div>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2567</div>
+        <div class="t-body">
+          <h4>G20 Interfaith Forum — Brasilia</h4>
+          <p>Participated in PaRD's workstream on religion and sustainable development at the G20 Interfaith Forum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NETWORKS -->
+  <div class="section-block">
+    <p class="section-label">Networks &amp; Affiliations</p>
+    <div class="framework">
+      <span class="pill">KAICIID Fellow</span>
+      <span class="pill">WCC Reference Group</span>
+      <span class="pill">PaRD</span>
+      <span class="pill">ACRP</span>
+      <span class="pill">AVPN</span>
+      <span class="pill">Religions for Peace</span>
+      <span class="pill">ICRC</span>
+      <span class="pill">Sunway Planetary Health</span>
+      <span class="pill">กสม.</span>
+      <span class="pill">ศูนย์คุณธรรม</span>
+      <span class="pill">Cofact Thailand</span>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="contact-strip">
+    <p>
+      <strong>Ven. Napan Thawornbanjob</strong><br>
+      Wat Saket (คณะ 6) · 344 Chakkraphatdi Phong Road · Bangkok 10100<br>
+      <strong>IBHAP Foundation</strong> · <a href="https://ibhap.org" style="color:var(--gold-light);">ibhap.org</a>
+    </p>
+    <a class="contact-link" href="mailto:pmnapan@ibhap.org">✉ pmnapan@ibhap.org</a>
+  </div>
+
+</main>
+
+<footer>
+  สันติสุขในใจใคร เริ่มต้นได้ที่ใจเรา · Peace in One's Heart Starts in One's Hands<br>
+  © 2026 Ven. Napan Thawornbanjob · <a href="https://ibhap.org" style="color:inherit;">ibhap.org</a>
+</footer>
+
+</body>
+</html>
