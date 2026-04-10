@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Archive — Early Career</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A84C;--gold-light:#E8C96A;--saffron:#E07B2A;--deep:#1A1A2E;--surface:#F8F5EF;--surface-alt:#F0EBE0;--white:#fff;--ink:#2C2416;--ink-soft:#6B5F4A;--teal:#2A6B6B;--border:rgba(201,168,76,0.25)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--ink)}
+header{background:var(--deep);padding:3rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% -10%,rgba(201,168,76,0.15) 0%,transparent 70%);pointer-events:none}
+header h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:300;color:var(--gold-light);position:relative}
+header p{font-size:0.78rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;margin-top:0.5rem;position:relative}
+header .back{position:absolute;left:2rem;top:50%;transform:translateY(-50%);font-size:0.75rem;color:var(--gold);text-decoration:none;letter-spacing:0.1em}
+header .back:hover{color:var(--gold-light)}
+main{max-width:960px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+.section-label{font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1.2rem;display:flex;align-items:center;gap:0.75rem}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+.section-block{margin-bottom:3rem}
+.filters{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem}
+.filter-btn{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.85rem;border-radius:100px;border:1px solid var(--border);background:var(--white);color:var(--ink-soft);cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
+.filter-btn.active,.filter-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.entry{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.2rem 1.4rem;margin-bottom:0.8rem;display:flex;gap:1rem;align-items:flex-start;transition:border-color 0.2s;position:relative;overflow:hidden}
+.entry::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--gold);opacity:0;transition:opacity 0.2s}
+.entry:hover{border-color:rgba(201,168,76,0.5)}
+.entry:hover::before{opacity:1}
+.entry .year{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold);min-width:42px;flex-shrink:0;text-align:right;padding-top:2px}
+.entry .body h3{font-size:0.88rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;line-height:1.4}
+.entry .body p{font-size:0.76rem;color:var(--ink-soft);line-height:1.6;font-weight:300}
+.entry .tags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem}
+.tag{font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;padding:2px 8px;border-radius:100px;font-weight:500;font-family:'DM Sans',sans-serif}
+.tag-media{background:rgba(224,123,42,0.1);color:var(--saffron)}
+.tag-intl{background:rgba(42,107,107,0.1);color:var(--teal)}
+.tag-org{background:rgba(201,168,76,0.12);color:#8B7530}
+.tag-dhamma{background:rgba(107,95,74,0.1);color:var(--ink-soft)}
+.tag-award{background:rgba(184,92,120,0.1);color:#B85C78}
+.tag-academic{background:rgba(45,95,139,0.1);color:#2D5F8B}
+.entry a{color:var(--teal);font-size:0.72rem;text-decoration:none;font-weight:500}
+.entry a:hover{text-decoration:underline}
+.stat-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--border);border-radius:4px;overflow:hidden;margin-bottom:3rem}
+.stat{background:var(--white);padding:1rem;text-align:center}
+.stat .num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--gold)}
+.stat .label{font-size:0.68rem;color:var(--ink-soft);letter-spacing:0.08em;text-transform:uppercase}
+.profiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-bottom:3rem}
+.profile-card{background:var(--white);border:1px solid var(--border);border-radius:4px;padding:1.2rem 1.4rem;display:flex;gap:0.8rem;align-items:center;text-decoration:none;color:var(--ink);transition:border-color 0.2s,transform 0.2s}
+.profile-card:hover{border-color:rgba(201,168,76,0.5);transform:translateY(-2px)}
+.profile-card .icon{font-size:1.5rem;flex-shrink:0}
+.profile-card h3{font-size:0.85rem;font-weight:500}
+.profile-card p{font-size:0.72rem;color:var(--ink-soft);font-weight:300}
+footer{text-align:center;padding:2rem;border-top:1px solid var(--border);font-size:0.72rem;color:var(--ink-soft)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.entry{animation:fadeUp 0.4s ease both}
+@media(max-width:560px){.entry{flex-direction:column;gap:0.3rem}.entry .year{text-align:left}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back" href="index.html">← Home</a>
+  <h1>Digital Archive — Early Career</h1>
+  <p>Ven. Napan Thawornbanjob · พ.ศ. 2531–2557 (1988–2014)</p>
+</header>
+
+<main>
+
+<div class="stat-strip">
+  <div class="stat"><div class="num">16</div><div class="label">Entries</div></div>
+  <div class="stat"><div class="num">5+</div><div class="label">Countries</div></div>
+  <div class="stat"><div class="num">2531</div><div class="label">Start year (BE)</div></div>
+  <div class="stat"><div class="num">2557</div><div class="label">Latest (BE)</div></div>
+  <div class="stat"><div class="num">ป.ธ.๙</div><div class="label">Pali Studies</div></div>
+</div>
+
+<div class="section-block">
+  <p class="section-label">Timeline &amp; Archive — 2531–2557 (1988–2014)</p>
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterEntries('all')">All</button>
+    <button class="filter-btn" onclick="filterEntries('intl')">International</button>
+    <button class="filter-btn" onclick="filterEntries('media')">Thai Media</button>
+    <button class="filter-btn" onclick="filterEntries('org')">Organisations</button>
+    <button class="filter-btn" onclick="filterEntries('dhamma')">Dhamma</button>
+    <button class="filter-btn" onclick="filterEntries('academic')">Academic</button>
+    <button class="filter-btn" onclick="filterEntries('award')">Awards</button>
+  </div>
+
+  <div id="entries">
+    <div class="entry" data-cat="academic intl">
+      <div class="year">2015</div>
+      <div class="body">
+        <h3>Studied at University of Leeds &amp; Cambridge, UK — Created IBHAP Concept</h3>
+        <p>Studied in the United Kingdom. While at Cambridge, created the first version of IBHAP — the concept of connecting Buddhist management to happiness and peace through SDGs. This UK period was transformative for the international vision.</p>
+        <div class="tags"><span class="tag tag-academic">Leeds</span><span class="tag tag-academic">Cambridge</span><span class="tag tag-intl">UK</span></div>
+      </div>
+    </div>
+
+
+    <div class="entry" data-cat="intl">
+      <div class="year">2014</div>
+      <div class="body">
+        <h3>Network for Religious and Traditional Peacemakers — First Engagement</h3>
+        <p>Introduced to the Network in 2014 in Vienna. Led to founding of IBHAP Foundation and ongoing collaboration on gender equality and peacebuilding.</p>
+        <div class="tags"><span class="tag tag-intl">Peacemakers</span><span class="tag tag-intl">Vienna</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="award media">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3>TRUE Little Monks — Cannes Corporate &amp; Media Awards 2013</h3>
+        <p>Anchorman for the reality TV show "สามเณรปลูกปัญญาธรรม" (TRUE Little Monks). Won international award at Cannes. Brought Buddhist education to mainstream Thai television.</p>
+        <div class="tags"><span class="tag tag-award">Cannes Award</span><span class="tag tag-media">TRUE TV</span><span class="tag tag-dhamma">สามเณร</span></div>
+        <a href="https://www.truelittlemonk.com/" target="_blank">truelittlemonk.com →</a>
+      </div>
+    </div>
+    <div class="entry" data-cat="intl">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3>Uganda — United Religions Initiative, Great Lakes Region</h3>
+        <p>Participated in conflict resolution discussions. Founding member of Buddhist Peace Network.</p>
+        <div class="tags"><span class="tag tag-intl">URI</span><span class="tag tag-intl">Uganda</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="intl">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3>Interfaith Peace Fellowship — Conflict Analysis &amp; Inclusive Peacemaking</h3>
+        <p>Completed advanced fellowship programme on conflict analysis, inclusive peacemaking, and coalition building. This programme catalysed Ven. Napan's transition from domestic dhamma work to international peacebuilding.</p>
+        <div class="tags"><span class="tag tag-intl">Fellowship</span><span class="tag tag-intl">Peacebuilding</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="intl">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3>Centre for Humanitarian Dialogue — Conflict Resolution</h3>
+        <p>Participated in conflict resolution discussions held by the Centre for Humanitarian Dialogue (HD), a Swiss-based pioneer of discreet mediation active in 80% of the world's violent conflicts.</p>
+        <div class="tags"><span class="tag tag-intl">HD Centre</span><span class="tag tag-intl">Mediation</span></div>
+        <a href="https://hdcentre.org/" target="_blank">hdcentre.org →</a>
+      </div>
+    </div>
+    <div class="entry" data-cat="intl">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3>Founding Member — Buddhist Peace Network</h3>
+        <p>Co-founded the Buddhist Peace Network, connecting Buddhist leaders working on conflict resolution, reconciliation, and peacebuilding across Asia and globally.</p>
+        <div class="tags"><span class="tag tag-intl">Buddhist Peace Network</span><span class="tag tag-org">Founding</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="intl academic">
+      <div class="year">2013</div>
+      <div class="body">
+        <h3>Lectures at Rotary Club of Thailand &amp; Rotary Peace Center, Chulalongkorn University</h3>
+        <p>Delivered lectures on peace-related topics at the Rotary Club and the Rotary Peace Center at Chulalongkorn University — one of six international Rotary Peace Centers worldwide.</p>
+        <div class="tags"><span class="tag tag-academic">Rotary</span><span class="tag tag-intl">Chulalongkorn</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="academic org">
+      <div class="year">2012</div>
+      <div class="body">
+        <h3>สถาบันพระปกเกล้า — สสสส. + บรม.</h3>
+        <p>ประกาศนียบัตรชั้นสูง หลักสูตรการเสริมสร้างสังคมสันติสุข (สสสส.) และหลักสูตรการบริหารงานภาครัฐและกฎหมายมหาชน (บรม.) จากสถาบันพระปกเกล้า — เครือข่ายผู้นำภาครัฐและเอกชนระดับสูง</p>
+        <div class="tags"><span class="tag tag-academic">King Prajadhipok's</span><span class="tag tag-academic">สสสส.</span><span class="tag tag-academic">บรม.</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="dhamma org">
+      <div class="year">2012</div>
+      <div class="body">
+        <h3>TRUE Little Monks — Anchorman, Reality TV (สามเณรปลูกปัญญาธรรม)</h3>
+        <p>พิธีกรรายการเรียลลิตี้ธรรมะถ่ายทอดสดแห่งแรกในเมืองไทย ทาง TrueVisions นำธรรมะเข้าสู่โทรทัศน์กระแสหลัก เข้าถึงครอบครัวนับล้านทั่วประเทศ</p>
+        <div class="tags"><span class="tag tag-media">TrueVisions</span><span class="tag tag-dhamma">สามเณร</span></div>
+        <a href="https://www.trueplookpanya.com/truelittlemonk/season3" target="_blank">trueplookpanya.com →</a>
+      </div>
+    </div>
+    <div class="entry" data-cat="academic">
+      <div class="year">2010</div>
+      <div class="body">
+        <h3>ป.ตรี ศึกษาศาสตร์ (มสธ.) + ป.โท ภาษาอังกฤษเพื่ออาชีพ (ธรรมศาสตร์)</h3>
+        <p>Bachelor of Education (Secondary Education, Non-formal) from Sukhothai Thammathirat Open University. Master of Arts in English for Careers from Thammasat University. Also studied Communication at NIDA.</p>
+        <div class="tags"><span class="tag tag-academic">STOU</span><span class="tag tag-academic">Thammasat</span><span class="tag tag-academic">NIDA</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="dhamma academic">
+      <div class="year">2008</div>
+      <div class="body">
+        <h3>GotoKnow Blog — Earliest Online Writings</h3>
+        <p>เริ่มเขียนบล็อกบน GotoKnow.org ในชื่อ "พระมหานภันต์ เพื่อชีวิตดีงาม" — แบ่งปันธรรมะประยุกต์ พัฒนาจิต และแนวคิดเพื่อชีวิตดีงาม เป็นร่องรอยดิจิทัลที่เก่าแก่ที่สุดที่ค้นพบ</p>
+        <div class="tags"><span class="tag tag-dhamma">Blog</span><span class="tag tag-media">GotoKnow</span></div>
+        <a href="https://www.gotoknow.org/posts/221558" target="_blank">gotoknow.org (2551) →</a>
+      </div>
+    </div>
+    <div class="entry" data-cat="dhamma org">
+      <div class="year">2007</div>
+      <div class="body">
+        <h3>หัวหน้าพระวิทยากร สำนักงานส่งเสริมคุณธรรม จริยธรรม วัดสระเกศ</h3>
+        <p>Head of Monk Trainers at the Morality and Ethics Promotion Office, Wat Saket. Designed and led training programmes on moral leadership, ethics, and Buddhist social capital for government officials, schools, and communities.</p>
+        <div class="tags"><span class="tag tag-org">วัดสระเกศ</span><span class="tag tag-dhamma">พระวิทยากร</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="dhamma org">
+      <div class="year">2001</div>
+      <div class="body">
+        <h3>Founded "For Beautiful Life Group" (เพื่อชีวิตดีงาม)</h3>
+        <p>Chair from 2001 to 2015. Designed training programmes for Buddhist community leaders in Southern Thailand's conflict zones. Precursor to IBHAP Foundation.</p>
+        <div class="tags"><span class="tag tag-org">FBLG</span><span class="tag tag-dhamma">Southern Thailand</span></div>
+        <a href="https://www.gotoknow.org/user/pmnapan/profile" target="_blank">gotoknow.org →</a>
+      </div>
+    </div>
+    <div class="entry" data-cat="dhamma">
+      <div class="year">2000</div>
+      <div class="body">
+        <h3>อุปสมบท — Ordained as Buddhist Monk at Wat Saket</h3>
+        <p>บวชพระ พ.ศ. 2543 ณ วัดสระเกศราชวรมหาวิหาร หลังจากบวชเณรตั้งแต่ พ.ศ. 2531 (จบ ป.6) สอบได้เปรียญธรรม 9 ประโยค (ป.ธ.๙) ซึ่งเป็นระดับสูงสุดของการศึกษาบาลี</p>
+        <div class="tags"><span class="tag tag-dhamma">อุปสมบท</span><span class="tag tag-dhamma">ป.ธ.๙</span></div>
+      </div>
+    </div>
+    <div class="entry" data-cat="dhamma">
+      <div class="year">1988</div>
+      <div class="body">
+        <h3>บรรพชา — Ordained as Novice Monk (สามเณร) at Wat Saket</h3>
+        <p>เกิด 20 ส.ค. 2519 กรุงเทพฯ · บวชเณร พ.ศ. 2531 หลังจบชั้น ป.6 ณ สำนักเรียนวัดคลองโพธิ์ เข้าอยู่วัดสระเกศราชวรมหาวิหาร ศึกษาพระปริยัติธรรม</p>
+        <div class="tags"><span class="tag tag-dhamma">บรรพชา</span><span class="tag tag-dhamma">วัดสระเกศ</span></div>
+      </div>
+    </div>
+  </div>
+    <p style="font-size:0.78rem;color:var(--ink-soft);margin-top:1rem;text-align:center;"><a href="archive.html" style="color:var(--teal);text-decoration:none;font-weight:500;">ดูช่วงล่าสุด 2558–2569 (Recent Decade) →</a></p>
+</div>
+
+</main>
+
+<footer>
+  สันติสุขในใจใคร เริ่มต้นได้ที่ใจเรา<br>
+  © 2026 Ven. Napan Thawornbanjob · <a href="index.html" style="color:inherit;">← Back to Home</a>
+</footer>
+
+<script>
+function filterEntries(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.entry').forEach(e => {
+    if (cat === 'all') { e.style.display = ''; return; }
+    e.style.display = e.dataset.cat.includes(cat) ? '' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
