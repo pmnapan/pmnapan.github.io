@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IBHAP Funding Analysis – Batch 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C8A951;--bg:#0F1117;--card:#181B24;--text:#E8E6E1;--dim:#8A8B90;--green:#4ADE80;--green-bg:rgba(74,222,128,.12);--amber:#FBBF24;--amber-bg:rgba(251,191,36,.12);--red:#F87171;--red-bg:rgba(248,113,113,.12);--blue:#60A5FA;--blue-bg:rgba(96,165,250,.12);--border:rgba(255,255,255,.06);--r:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Sarabun',sans-serif;line-height:1.6}
+.c{max-width:1400px;margin:0 auto;padding:28px 20px;position:relative;z-index:1}
+header{text-align:center;margin-bottom:40px}
+header h1{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--gold);margin-bottom:6px}
+header .sub{color:var(--dim);font-size:.92rem}
+header .badge{display:inline-block;margin-top:10px;padding:5px 16px;border:1px solid var(--gold);border-radius:999px;font-size:.78rem;color:var(--gold);letter-spacing:.06em;text-transform:uppercase}
+.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:36px}
+.sc{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;text-align:center}
+.sc .n{font-family:'JetBrains Mono',monospace;font-size:1.8rem;font-weight:700}
+.sc .l{font-size:.8rem;color:var(--dim);margin-top:3px}
+.n.gold{color:var(--gold)}.n.green{color:var(--green)}.n.amber{color:var(--amber)}.n.red{color:var(--red)}
+.ban{background:linear-gradient(135deg,rgba(200,169,81,.1),rgba(200,169,81,.03));border:1px solid rgba(200,169,81,.25);border-radius:var(--r);padding:22px 28px;margin-bottom:36px}
+.ban h2{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:10px}
+.ban p{font-size:.9rem;line-height:1.7}.hi{color:var(--green);font-weight:600}
+.tw{overflow-x:auto;border:1px solid var(--border);border-radius:var(--r);margin-bottom:36px}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th{background:rgba(200,169,81,.08);color:var(--gold);font-weight:600;text-align:left;padding:12px 14px;white-space:nowrap;border-bottom:1px solid var(--border);position:sticky;top:0}
+td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:hover td{background:rgba(255,255,255,.02)}
+.p{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.73rem;font-weight:600;white-space:nowrap}
+.p.g{background:var(--green-bg);color:var(--green)}.p.a{background:var(--amber-bg);color:var(--amber)}.p.r{background:var(--red-bg);color:var(--red)}.p.b{background:var(--blue-bg);color:var(--blue)}
+.cards{display:grid;gap:18px;margin-bottom:36px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px 26px;transition:all .3s}
+.card:hover{border-color:rgba(200,169,81,.2)}
+.card h3{font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:8px}
+.card .v{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:999px;font-size:.75rem;font-weight:600;margin-bottom:12px}
+.v.rec{background:var(--green-bg);color:var(--green)}.v.con{background:var(--amber-bg);color:var(--amber)}.v.skip{background:var(--red-bg);color:var(--red)}.v.unk{background:var(--blue-bg);color:var(--blue)}
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px 20px;margin-bottom:12px}
+.ml{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--dim)}.mv{font-size:.86rem}
+.at{font-size:.86rem;line-height:1.7;margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.at strong{color:var(--gold)}
+footer{text-align:center;padding:28px 0;border-top:1px solid var(--border);color:var(--dim);font-size:.78rem}
+@media(max-width:768px){.row4{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="c">
+<header>
+  <h1>🏛️ IBHAP Funding Analysis — Batch 2</h1>
+  <div class="sub">วิเคราะห์ 9 โอกาสเพิ่มเติม เพื่อขับเคลื่อน Buddhism for SDGs</div>
+  <div class="badge">พระอาจารย์มหานภันต์ · IBHAP Foundation · 9 เมษายน 2026</div>
+</header>
+
+<div class="row4">
+  <div class="sc"><div class="n gold">9</div><div class="l">โอกาสทั้งหมด</div></div>
+  <div class="sc"><div class="n green">4</div><div class="l">แนะนำสมัคร ⭐</div></div>
+  <div class="sc"><div class="n amber">2</div><div class="l">พิจารณา / ส่งตัวแทน</div></div>
+  <div class="sc"><div class="n red">3</div><div class="l">ไม่เหมาะ / หมดเขต</div></div>
+</div>
+
+<div class="ban">
+  <h2>📋 สรุปคำแนะนำ (Executive Summary)</h2>
+  <p>จาก 9 รายการนี้ มี <span class="hi">4 โอกาสที่ตรงและควรดำเนินการ</span>:</p>
+  <p style="margin-top:8px"><span class="hi">① Lund Summer School – Digital Human Rights</span> — ฟรี, ที่พักฟรี, 5 วัน, deadline 15 เม.ย. ตรงกับงาน APMA — <strong>สมัครได้ทันที</strong></p>
+  <p style="margin-top:8px"><span class="hi">② DAAD GROW</span> — ทุนวิจัยระยะสั้น 2–6 เดือนในเยอรมนี เชื่อมโยง SDGs โดยตรง, deadline 30 เม.ย. — <strong>เหมาะกับพระอาจารย์ในฐานะ PhD candidate / university teacher</strong></p>
+  <p style="margin-top:8px"><span class="hi">③ CFLI ASEAN</span> — ทุนโครงการจากแคนาดา CAD 20k–40k ตรงกับงาน interfaith/peace ของ IBHAP (Thailand track หมดเขต แต่ ASEAN track อาจยังเปิด)</p>
+  <p style="margin-top:8px"><span class="hi">④ Idea Hacks 2026</span> — NIA + พอช. สนับสนุนเครื่องมือ+งบ สำหรับนวัตกรรมชุมชน, deadline 12 พ.ค. — <strong>เหมาะกับ อยู่ดีมีลาภ social business</strong></p>
+</div>
+
+<!-- Comparison Table -->
+<div class="tw">
+<table>
+<thead><tr>
+  <th>#</th><th>โอกาส</th><th>ประเภท</th><th>ทุน</th><th>Deadline</th><th>ตรง Buddhism for SDGs</th><th>พระอาจารย์สมัครได้?</th><th>คำแนะนำ</th>
+</tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>IHRB Researcher/Writer</strong></td><td>งานที่ปรึกษา</td><td>£70,000 / 18 เดือน</td><td style="color:var(--amber)">15 เม.ย. 2026</td><td><span class="p a">ปานกลาง</span></td><td><span class="p r">ต้อง 7+ ปี วิจัย climate</span></td><td><span class="p r">ไม่ตรงกลุ่ม</span></td></tr>
+<tr><td>2</td><td><strong>Lund – Digital Human Rights</strong></td><td>Summer School</td><td>ฟรี + ที่พัก 6 คืน</td><td style="color:var(--red)">15 เม.ย. 2026 ⏰</td><td><span class="p g">สูง</span></td><td><span class="p g">ใช่ ✓</span></td><td><span class="p g">สมัครด่วน! ⭐</span></td></tr>
+<tr><td>3</td><td><strong>Lee Kong Chian Fellowship</strong></td><td>Research Fellowship</td><td>S$3,500/เดือน + ที่พัก</td><td>29 พ.ค. 2026</td><td><span class="p a">ปานกลาง</span></td><td><span class="p a">ต้องวิจัย SEA history</span></td><td><span class="p a">พิจารณา</span></td></tr>
+<tr><td>4</td><td><strong>AI for Good Summit</strong></td><td>Conference</td><td>ต้องซื้อบัตร (NGO ฟรี 2)</td><td>ลงทะเบียนเปิด</td><td><span class="p g">สูงมาก</span></td><td><span class="p a">NGO accredited เท่านั้น</span></td><td><span class="p a">ตรวจสอบ NGO status</span></td></tr>
+<tr><td>5</td><td><strong>Google Higher Ed AI Fellowship</strong></td><td>Fellowship</td><td>ไม่มีทุน (self-fund)</td><td>เปิดรับ (cohort 2026)</td><td><span class="p a">ปานกลาง</span></td><td><span class="p a">ต้องเป็น faculty + AI use</span></td><td><span class="p a">พิจารณา</span></td></tr>
+<tr><td>6</td><td><strong>DAAD GROW</strong></td><td>Research Grant</td><td>€2,000–2,150/เดือน + ตั๋ว</td><td style="color:var(--amber)">30 เม.ย. 2026</td><td><span class="p g">สูงมาก</span></td><td><span class="p g">ใช่ ✓</span></td><td><span class="p g">แนะนำสมัคร ⭐</span></td></tr>
+<tr><td>7</td><td><strong>CFLI Thailand</strong></td><td>Project Grant</td><td>CAD 15k–35k</td><td style="color:var(--red)">8 เม.ย. 2026 ❌</td><td><span class="p g">สูงมาก</span></td><td><span class="p g">ใช่ (IBHAP)</span></td><td><span class="p r">หมดเขต → ดู ASEAN</span></td></tr>
+<tr><td>8</td><td><strong>Social Innovation Village: Idea Hacks 2026</strong></td><td>อบรม+ทุนชุมชน</td><td>สนับสนุนเครื่องมือ+งบ</td><td style="color:var(--amber)">12 พ.ค. 2026</td><td><span class="p g">สูง</span></td><td><span class="p g">ใช่ (IBHAP/อยู่ดีมีลาภ)</span></td><td><span class="p g">แนะนำสมัคร ⭐</span></td></tr>
+<tr><td>9</td><td><strong>SDGs Youth Policy Challenge</strong></td><td>Competition</td><td>ไม่ทราบ</td><td>ไม่ทราบ</td><td><span class="p b">ต้องตรวจสอบ</span></td><td><span class="p b">น่าจะเยาวชน</span></td><td><span class="p b">รอข้อมูล</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- Detailed Cards for Top 3 -->
+<div class="cards">
+
+<div class="card" style="border-left:3px solid var(--green)">
+  <h3>⭐ #2 Lund University — Summer School in Digital Human Rights</h3>
+  <div class="v rec">✓ แนะนำสมัครด่วน!</div>
+  <div class="mg">
+    <div><div class="ml">ผู้จัด</div><div class="mv">Lund Faculty of Law + Raoul Wallenberg Institute</div></div>
+    <div><div class="ml">สถานที่</div><div class="mv">Lund, Sweden</div></div>
+    <div><div class="ml">วันที่</div><div class="mv">22–26 มิ.ย. 2026 (5 วัน)</div></div>
+    <div><div class="ml">Deadline</div><div class="mv" style="color:var(--red);font-weight:700">15 เม.ย. 2026 — เหลือ 6 วัน!</div></div>
+    <div><div class="ml">ทุน</div><div class="mv">ไม่มีค่าเรียน + ที่พัก 6 คืนฟรี + travel grant (จำนวนจำกัด)</div></div>
+    <div><div class="ml">คุณสมบัติ</div><div class="mv">ป.โท+ หรือ ป.ตรี+2 ปี ทำงาน, ต้องมีพื้นฐาน HR law</div></div>
+  </div>
+  <div class="at">
+    <strong>ทำไมเหมาะ:</strong> ตรงกับ APMA programme (สิทธิมนุษยชน) + ต่อยอด AI & human rights สำหรับ IBHAP Communication Centre พระอาจารย์มีพื้นฐาน HR จาก IHRP Mahidol ครบคุณสมบัติ ใช้เวลาสมัครน้อย (400 คำ statement + 1-page CV)
+    <br><strong>ข้อจำกัด:</strong> ต้องจ่ายตั๋วเครื่องบินเอง (ขอ travel grant ได้), ชนกับ KAICIID training (11–15 มิ.ย.) แต่คนละสัปดาห์
+  </div>
+</div>
+
+<div class="card" style="border-left:3px solid var(--green)">
+  <h3>⭐ #6 DAAD GROW — Global Research Opportunities for the South</h3>
+  <div class="v rec">✓ แนะนำสมัคร</div>
+  <div class="mg">
+    <div><div class="ml">ผู้จัด</div><div class="mv">DAAD + BMZ (เยอรมนี)</div></div>
+    <div><div class="ml">สถานที่</div><div class="mv">มหาวิทยาลัยในเยอรมนี</div></div>
+    <div><div class="ml">ระยะเวลา</div><div class="mv">2–6 เดือน (เริ่ม ก.ค./ส.ค. 2026)</div></div>
+    <div><div class="ml">Deadline</div><div class="mv" style="color:var(--amber);font-weight:700">30 เม.ย. 2026 — เหลือ 21 วัน</div></div>
+    <div><div class="ml">ทุน</div><div class="mv">€2,000/เดือน (lecturer) หรือ €2,150 (professor) + ตั๋ว + ประกัน</div></div>
+    <div><div class="ml">คุณสมบัติ</div><div class="mv">นักวิชาการจาก OECD DAC list (ไทยรวมอยู่), SDG-aligned research</div></div>
+  </div>
+  <div class="at">
+    <strong>ทำไมเหมาะมาก:</strong> กำหนดชัดเจนว่าโปรเจกต์ต้องเชื่อมโยง SDGs — ตรงกับ PhD thesis "Social Marketing for Buddhism and SDGs" ได้พอดี พระอาจารย์ในฐานะ PhD candidate + university teacher (สอนที่ SWU) มีคุณสมบัติ ต้องมี host institution ในเยอรมนี — อาจติดต่อ Humboldt, GIGA, หรือ Max Planck Institute
+    <br><strong>ข้อจำกัด:</strong> ต้องอยู่เยอรมนี 2–6 เดือน (เริ่ม ก.ค. 2026) ซึ่งชนกับ PhD defence deadline (30 มิ.ย.) — <strong>อาจสมัครเป็น Line 1 (preparatory visit 1–2 เดือน)</strong> หลัง defence แทน
+  </div>
+</div>
+
+<div class="card" style="border-left:3px solid var(--green)">
+  <h3>⭐ #7 CFLI ASEAN — Canada Fund for Local Initiatives</h3>
+  <div class="v rec">✓ แนะนำ (สมัคร ASEAN track)</div>
+  <div class="mg">
+    <div><div class="ml">ผู้จัด</div><div class="mv">Global Affairs Canada / สถานทูตแคนาดา</div></div>
+    <div><div class="ml">วงเงิน</div><div class="mv">CAD 20,000–40,000 (สูงสุด CAD 100,000)</div></div>
+    <div><div class="ml">Thailand Deadline</div><div class="mv" style="color:var(--red)">8 เม.ย. 2026 ❌ หมดแล้ว</div></div>
+    <div><div class="ml">ASEAN Deadline</div><div class="mv" style="color:var(--amber);font-weight:700">30 เม.ย. 2026 (ต้องตรวจสอบ)</div></div>
+    <div><div class="ml">ธีม</div><div class="mv">Inclusive governance, Peace & Security, Gender, Climate</div></div>
+    <div><div class="ml">เงื่อนไข ASEAN</div><div class="mv">ต้องมีผลกระทบใน 3+ ประเทศ ASEAN</div></div>
+  </div>
+  <div class="at">
+    <strong>ทำไมเหมาะมาก:</strong> IBHAP Foundation เป็น local CSO ที่จดทะเบียนในไทย, ทำงาน inclusive governance + peace + interfaith dialogue ตรงทุกธีม CFLI สามารถเสนอโปรเจกต์ interfaith dialogue ครอบคลุม 3+ ประเทศ ASEAN (ไทย, เมียนมาร์ (ชายแดนใต้), ฟิลิปปินส์ ฯลฯ)
+    <br><strong>ดำเนินการ:</strong> ติดต่อ bngkk.cfli-fcil@international.gc.ca เพื่อขอแบบฟอร์ม CFLI Thailand 2027 หรือ ASEAN-CFLI.ANASE-FCIL@international.gc.ca สำหรับ ASEAN track
+  </div>
+</div>
+
+</div>
+
+<!-- Detailed for others -->
+<div class="cards">
+
+<div class="card">
+  <h3>#1 IHRB Researcher/Writer — Adaptation & Resilience</h3>
+  <div class="v skip">✕ ไม่เหมาะ</div>
+  <div class="at"><strong>เหตุผล:</strong> ต้องมีประสบการณ์ 7+ ปีด้าน climate adaptation research + long-form journalism ค่าตอบแทน £70k/18 เดือน น่าสนใจแต่เป็นงาน full-time consultancy ที่เน้น climate เฉพาะทาง ไม่ตรงกับ Buddhism for SDGs และชนกับภาระ PhD + IBHAP</div>
+</div>
+
+<div class="card">
+  <h3>#3 Lee Kong Chian Research Fellowship — Singapore</h3>
+  <div class="v con">⚡ พิจารณา (หลัง PhD)</div>
+  <div class="at"><strong>เหตุผล:</strong> Fully funded 6 เดือน (S$3,500/เดือน + ตั๋ว + ที่พัก), deadline 29 พ.ค. 2026 แต่ต้องวิจัยเกี่ยวกับประวัติศาสตร์สิงคโปร์/เอเชียตะวันออกเฉียงใต้โดยใช้ archival collections อาจเสนอวิจัย "Buddhism and Social Change in Southeast Asia" ได้ แต่ต้องอยู่สิงคโปร์ 6 เดือนซึ่งขัดกับ PhD timeline — <strong>เก็บไว้สมัครหลัง defence</strong></div>
+</div>
+
+<div class="card">
+  <h3>#4 AI for Good Global Summit — Geneva</h3>
+  <div class="v con">⚡ พิจารณา</div>
+  <div class="at"><strong>เหตุผล:</strong> งาน UN ระดับโลกเรื่อง AI + SDGs (7–10 ก.ค. 2026) ตรงมากกับ IBHAP AI-powered operating model NGO ที่ accredited กับ UN Geneva ได้ Gold Pass ฟรี 2 ใบ — ต้องตรวจสอบว่า IBHAP หรือ RfP Thailand มี UN accreditation หรือไม่ ถ้าไม่มี ต้องซื้อบัตร (มีราคาสำหรับ NGO/student)</div>
+</div>
+
+<div class="card">
+  <h3>#5 Google Higher Ed Faculty AI Fellowship</h3>
+  <div class="v con">⚡ พิจารณา</div>
+  <div class="at"><strong>เหตุผล:</strong> Inaugural cohort 2026 สำหรับ faculty ที่ใช้ AI ในการสอน/วิจัย — ต้อง submit portfolio of AI innovation + 90-second video ไม่มีทุนสนับสนุนการเดินทาง (self-fund ไป London) แต่ได้เครือข่าย Google + visibility พระอาจารย์มี AI use case จริง (Claude as executive secretary) แต่ต้องพิจารณาว่า faculty status ที่ SWU เพียงพอหรือไม่</div>
+</div>
+
+<div class="card" style="border-left:3px solid var(--green)">
+  <h3>⭐ #8 Social Innovation Village: Idea Hacks 2026 — NIA + พอช.</h3>
+  <div class="v rec">✓ แนะนำสมัคร</div>
+  <div class="mg">
+    <div><div class="ml">ผู้จัด</div><div class="mv">NIA (สนช.) + สถาบันพัฒนาองค์กรชุมชน (พอช.)</div></div>
+    <div><div class="ml">Deadline</div><div class="mv" style="color:var(--amber);font-weight:700">12 พ.ค. 2026 — เหลือ 33 วัน</div></div>
+    <div><div class="ml">Open House</div><div class="mv">30 เม.ย. 2026 ผ่าน MS Teams</div></div>
+    <div><div class="ml">ประกาศผลรอบแรก</div><div class="mv">14 พ.ค. 2026</div></div>
+    <div><div class="ml">ทุน</div><div class="mv">สนับสนุนเครื่องมือ + งบพัฒนานวัตกรรม</div></div>
+    <div><div class="ml">คุณสมบัติ</div><div class="mv">ทีมชุมชนที่เป็นนิติบุคคล + เรียน MOOCs + แผนนวัตกรรม + BMC</div></div>
+  </div>
+  <div class="at">
+    <strong>ทำไมเหมาะ:</strong> IBHAP Foundation เป็นนิติบุคคล (มูลนิธิ) ผ่านเกณฑ์ สามารถเสนอโปรเจกต์ผ่าน "อยู่ดีมีลาภ (YOU DE ME LARP)" social business — เช่น ผลิตภัณฑ์/บริการเชิงพุทธสำหรับชุมชน, mindfulness retreat, digital dharma platform หรือรวมชุมชนรอบวัดสระเกศ + ชุมชนเครือข่ายชายแดนใต้
+    <br><strong>ดำเนินการ:</strong> ① เข้า Open House 30 เม.ย. ② สมาชิกทีมเรียน NIA MOOCs ③ เตรียมแผนนวัตกรรม + BMC ④ ลงทะเบียนก่อน 12 พ.ค.
+  </div>
+</div>
+
+<div class="card">
+  <h3>#9 SDGs Youth Public Policy Innovation Challenge (China)</h3>
+  <div class="v skip">? ข้อมูลไม่เพียงพอ</div>
+  <div class="at"><strong>เหตุผล:</strong> ไม่สามารถค้นหาข้อมูลเฉพาะจากลิงก์ได้ หากพระอาจารย์มีรายละเอียดเพิ่มเติม จะวิเคราะห์ต่อครับ</div>
+</div>
+
+</div>
+
+<!-- Action Plan -->
+<div class="ban">
+  <h2>🎯 แผนปฏิบัติการเร่งด่วน</h2>
+  <p><strong>🔴 ภายใน 15 เม.ย. (6 วัน):</strong></p>
+  <p>① <span class="hi">Lund Summer School</span> — เตรียม 400-word statement + 1-page CV + 200-word travel grant request → สมัครออนไลน์</p>
+  <p style="margin-top:6px"><strong>🟡 ภายใน 24 เม.ย. (15 วัน):</strong></p>
+  <p>② <span class="hi">AVPN Harmony in Diversity Fund</span> — ดำเนินการต่อ (ตรวจสอบ eligibility enquiry + เตรียม proposal)</p>
+  <p>③ <span class="hi">ปปร.30</span> — ส่งใบสมัคร</p>
+  <p style="margin-top:6px"><strong>🟡 ภายใน 30 เม.ย. (21 วัน):</strong></p>
+  <p>④ <span class="hi">DAAD GROW</span> — เตรียม project proposal "Buddhism & SDGs Social Marketing" + หา host institution เยอรมนี + สมัครผ่าน DAAD Portal</p>
+  <p>⑤ <span class="hi">CFLI ASEAN</span> — ติดต่อสถานทูตแคนาดาขอข้อมูล ASEAN track 2026</p>
+  <p>⑥ <span class="hi">Idea Hacks 2026 Open House</span> — เข้าร่วม 30 เม.ย. ผ่าน MS Teams</p>
+  <p style="margin-top:6px"><strong>🟡 ภายใน 12 พ.ค. (33 วัน):</strong></p>
+  <p>⑦ <span class="hi">Idea Hacks 2026</span> — สมาชิกทีมเรียน MOOCs + เตรียมแผนนวัตกรรม/BMC + ลงทะเบียน</p>
+  <p style="margin-top:6px"><strong>🟢 หลัง PhD Defence (ก.ค.+ 2026):</strong></p>
+  <p>⑧ Lee Kong Chian Fellowship (deadline 29 พ.ค. — สมัครก่อน defence ได้)</p>
+  <p>⑨ AI for Good Summit Geneva (7–10 ก.ค.) — ตรวจสอบ NGO accreditation</p>
+  <p>⑩ Google Higher Ed AI Fellowship — สมัครหากมีเวลา</p>
+</div>
+
+<footer>IBHAP Foundation Funding Analysis Dashboard – Batch 2 · Claude Executive Secretary · 9 เมษายน 2026</footer>
+</div>
+</body>
+</html>
